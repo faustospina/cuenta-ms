@@ -1,10 +1,12 @@
 package com.cuenta.cuenta_ms.model.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.List;
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Data
 public class Cuenta {

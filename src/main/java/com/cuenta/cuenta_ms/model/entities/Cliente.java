@@ -1,8 +1,12 @@
 package com.cuenta.cuenta_ms.model.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Data
 public class Cliente {

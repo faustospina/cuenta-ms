@@ -1,6 +1,5 @@
 package com.cuenta.cuenta_ms.service;
 
-import com.cuenta.cuenta_ms.exception.BusinessException;
 import com.cuenta.cuenta_ms.exception.NotFoundException;
 import com.cuenta.cuenta_ms.model.dto.CuentaDTO;
 import com.cuenta.cuenta_ms.model.entities.Cliente;
@@ -80,28 +79,6 @@ public class CuentaServiceImpl implements CuentaService{
         clienteService.delete(cliente);
         return ResponseEntity.noContent().build();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

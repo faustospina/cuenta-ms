@@ -1,19 +1,12 @@
 package com.cuenta.cuenta_ms.service;
 
-import com.cuenta.cuenta_ms.exception.BusinessException;
 import com.cuenta.cuenta_ms.exception.NotFoundException;
-import com.cuenta.cuenta_ms.model.dto.ClienteDTO;
 import com.cuenta.cuenta_ms.model.entities.Cliente;
-import com.cuenta.cuenta_ms.model.entities.Cuenta;
 import com.cuenta.cuenta_ms.model.mapper.ClienteMapper;
 import com.cuenta.cuenta_ms.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
