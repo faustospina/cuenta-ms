@@ -33,7 +33,7 @@
 
 # Instalacion docker
 - En la raiz del proyecto ejecutar para [cliente-ms](https://github.com/faustospina/cliente-ms) docker build -t "spring-boot-cliente-ms" .
-- En la raiz del proyecto ejecutar para [cuenta-ms](https://github.com/faustospina/cuenta-ms) docker build -t "spring-boot-cliente-ms" .
+- En la raiz del proyecto ejecutar para [cuenta-ms](https://github.com/faustospina/cuenta-ms) docker build -t "spring-boot-cuenta-ms" .
 - Despues de verificar las imagenes cargadas en docker seguir con el siguiente item
 - En la raiz del proyecto ejecutar para [cliente-ms](https://github.com/faustospina/cliente-ms) docker-compose up
 
