@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: cliente-ms
+  datasource:
+    url: jdbc:mysql://your-host-url
+    username: user
+    password: pass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 8081
+
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: false
+    credentials:
+      # Es recomendable usar variables de entorno en producción.
+      access-key: your acces-key
+      secret-key: your secret key
+    end-point:
+      uri: your url sqs
