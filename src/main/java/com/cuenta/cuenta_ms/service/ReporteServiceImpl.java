@@ -39,7 +39,9 @@ public class ReporteServiceImpl implements ReporteService{
                             mov.getFecha(),
                             mov.getTipoMovimiento(),
                             mov.getValor(),
-                            mov.getSaldo()
+                            mov.getSaldo(),
+                            mov.getEstado(),
+                            mov.getDescripcion()
                     )).collect(Collectors.toList());
 
             return new CuentaReporte(

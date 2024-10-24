@@ -12,7 +12,7 @@ public class SqsMessageReceiver {
     private MovimientoService service;
 
 
-    @Scheduled(fixedRate = 30000)
+    @Scheduled(fixedRate = 60000)
     public void scheduledReceiveMessages() {
         service.receiveAndProcessAllMessages();
     }

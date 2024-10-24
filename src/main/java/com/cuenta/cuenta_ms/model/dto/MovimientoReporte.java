@@ -13,4 +13,6 @@ public class MovimientoReporte {
     private String tipoMovimiento;
     private double valor;
     private double saldoDisponible;
+    private String estado;
+    private String descripcion;
 }

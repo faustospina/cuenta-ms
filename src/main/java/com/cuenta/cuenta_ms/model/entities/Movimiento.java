@@ -17,5 +17,7 @@ public class Movimiento {
     private double valor;
     private double saldo;
     private Long cuentaId;
+    private String estado;
+    private String descripcion;
 
 }
