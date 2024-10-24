@@ -58,6 +58,7 @@ public class MovimientoServiceImp implements MovimientoService{
 
         if (TipoMovimiento.RETIRO.equals(movimientoSQS.tipoMovimiento())) {
             if (nuevoSaldo < movimientoSQS.valor()) {
+                buildMovimiento(movimientoSQS, cuentaOpt, nuevoSaldo, "FAIL", "Transaccion fallida, No hay saldo suficiente para realizar el retiro.");
                 throw new BusinessException("No hay saldo suficiente para realizar el retiro.");
             }
             nuevoSaldo -= movimientoSQS.valor();
@@ -67,6 +68,10 @@ public class MovimientoServiceImp implements MovimientoService{
             throw new IllegalArgumentException("Tipo de movimiento no válido.");
         }
 
+        buildMovimiento(movimientoSQS, cuentaOpt, nuevoSaldo,"SUCCESS","Transaccion extitosa!");
+    }
+
+    private void buildMovimiento(MovimientoSQS movimientoSQS, Cuenta cuentaOpt, double nuevoSaldo, String estado, String descripcion) {
         cuentaOpt.setSaldoInicial(nuevoSaldo);
         cuentaRepository.save(cuentaOpt);
         Movimiento movimiento = new Movimiento();
@@ -74,6 +79,8 @@ public class MovimientoServiceImp implements MovimientoService{
         movimiento.setTipoMovimiento(movimientoSQS.tipoMovimiento().name());
         movimiento.setValor(movimientoSQS.valor());
         movimiento.setSaldo(nuevoSaldo);
+        movimiento.setEstado(estado);
+        movimiento.setDescripcion(descripcion);
         movimiento.setCuentaId(cuentaOpt.getId());
 
         movimientoRepository.save(movimiento);
@@ -111,8 +118,9 @@ public class MovimientoServiceImp implements MovimientoService{
     @Override
     public void receiveAndProcessAllMessages() {
         boolean messagesRemaining = true;
-
-        while (messagesRemaining) {
+        int contador = 0;
+        while (messagesRemaining && contador<2) {
+            contador++;
             Message<String> receivedMessage = (Message<String>) queueMessagingTemplate.receive(endpoint);
 
             if (receivedMessage != null) {
@@ -131,7 +139,7 @@ public class MovimientoServiceImp implements MovimientoService{
                 messagesRemaining = false;
             }
         }
-        System.out.println("Todos los mensajes fueron procesados.");
+        System.out.println("pila de mensajes procesados.");
     }
 
     @Override
