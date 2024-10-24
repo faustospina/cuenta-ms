@@ -1,14 +1,37 @@
-# Compiled class file
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 *.class
 
-# Log file
-*.log
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# BlueJ files
-*.ctxt
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
 
 # Package Files #
 *.jar
@@ -22,3 +45,76 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Maven - Archivos y directorios generados por Maven
+/target/
+
+# Archivos de configuración de IntelliJ IDEA
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
+/*.ipr
+/*.iws
+
+# Eclipse IDE
+/.settings/
+/.project
+/.classpath
+/.factorypath
+
+# VSCode
+.vscode/
+
+# Archivos de sistema Mac
+.DS_Store
+
+# Archivos de sistema Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Archivos de sistema Linux
+*~
+
+# Archivos de configuración del entorno
+.env
+*.env
+
+# Logs
+/logs
+*.log
+
+# Configuraciones de entornos de ejecución y depuración
+*.swp
+*.swo
+
+# Archivos temporales
+/tmp
+*.tmp
+
+# Carpetas del IDE de JetBrains
+/.idea/
+/*.iws
+/*.iml
+/*.ipr
+
+# Dependencias descargadas por Maven
+.mvn/
+
+# Archivos relacionados con pruebas
+/test-output/
+/surefire-reports/
+
+# Archivos generados por el plugin de empaquetado
+/target/
+
+# Librerías y dependencias no versionadas
+/lib/
+
+# Archivos que pueden contener datos sensibles
+/secrets
+/private
+/security
+
